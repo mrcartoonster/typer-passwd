@@ -523,6 +523,14 @@ version = "0.2.5"
 
 [[package]]
 category = "main"
+description = "A really lazy package"
+name = "yakutils"
+optional = false
+python-versions = "*"
+version = "1.7.0"
+
+[[package]]
+category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
 name = "zipp"
 optional = false
@@ -534,7 +542,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "01a30735de72023420f572f5c1bb6b00cda3db15cde4c0fb1e521327355f5a43"
+content-hash = "60d7e9f3b896d007ff03154a97c9621bfa9907431b1d553b46f54833248f6103"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -721,6 +729,9 @@ virtualenv = [
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},
     {file = "wcwidth-0.2.5.tar.gz", hash = "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"},
+]
+yakutils = [
+    {file = "yakutils-1.7.0.tar.gz", hash = "sha256:7082ea3dfd7d725caaf41e4d9bbfa557d400cbf5b2e7a5b63021d9f5b33e3a28"},
 ]
 zipp = [
     {file = "zipp-3.1.0-py3-none-any.whl", hash = "sha256:aa36550ff0c0b7ef7fa639055d797116ee891440eac1a56f378e2d3179e0320b"},

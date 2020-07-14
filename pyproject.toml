@@ -10,6 +10,7 @@ python = "^3.8"
 typer = {extras = ["all"], version = "^0.3.0"}
 typer-cli = {git = "https://github.com/mrcartoonster/typer-cli"}
 colorful = "^0.5.4"
+yakutils = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
