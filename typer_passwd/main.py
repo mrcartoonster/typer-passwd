@@ -1,18 +1,25 @@
 # -*- coding: utf-8 -*-
+import secrets
+import string
+
 import typer
-from yakutils import random_string
 
 app = typer.Typer()
 
 
+def rstring(num: int) -> str:
+    """Helper function to create a random string."""
+    return "".join([secrets.choice(string.printable[:94]) for _ in range(num)])
+
+
 def callback_passwd(value: int = 8) -> str:
-    """Function that return random strings."""
-    if value < 8 and value > 64:
+    """Typer callback function to generate random string."""
+    if value < 8 or value > 64:
         raise typer.BadParameter(
-            "Password length must between eight(8) to sixtyfour(64) greater!",
+            "Password length must between eight(8) to sixtyfour(64)!",
         )
     else:
-        return random_string(value)
+        return rstring(value)
 
 
 @app.command()
