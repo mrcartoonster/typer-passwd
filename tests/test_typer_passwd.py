@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import colorful as cf
 import pytest
 from typer.testing import CliRunner
 
@@ -10,6 +11,10 @@ runner = CliRunner()
 
 def test_version():
     """Checking version is set correclty."""
+    ver_num = cf.bold_green(__version__)
+    result = runner.invoke(app, ["--version"], color=True)
+    assert result.exit_code == 0
+    assert f"typer-passwd version: {ver_num}"
     assert __version__ == "0.1.0"
 
 

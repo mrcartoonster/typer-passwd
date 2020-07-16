@@ -1,10 +1,22 @@
 # -*- coding: utf-8 -*-
 import secrets
 import string
+from typing import Optional
 
+import colorful as cf
 import typer
 
 app = typer.Typer()
+
+__version__ = "0.1.0"
+
+
+def version_callback(value: bool):
+    """Returning versin of typer-passwd."""
+    ver_num = cf.bold_green(__version__)
+    if value:
+        typer.echo(f"typer-passwd version: {ver_num}")
+        raise typer.Exit()
 
 
 def rstring(num: int) -> str:
@@ -27,10 +39,14 @@ def main(
     amount: int = typer.Argument(
         8,
         callback=callback_passwd,
-        help="Returns random password. Default is 8 charachters long.",
+        help="Takes integer for the length of random password.",
+    ),
+    version: Optional[bool] = typer.Option(
+        None, "--version", "-v", callback=version_callback,
     ),
 ):
-    """Option that returns the password."""
+    """Outputs random password with the length given or eight(8) characters
+    long by default."""
     typer.echo(amount)
 
 
