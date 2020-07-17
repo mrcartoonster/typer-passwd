@@ -19,14 +19,22 @@ def version_callback(value: bool) -> str:
         raise typer.Exit()
 
 
-def rstring(num: int) -> str:
-    """Helper function to create a random string."""
-    return "".join([secrets.choice(string.printable[:94]) for _ in range(num)])
-
-
 def colorizer(rstr: Sequence[str]) -> str:
     """Helper function that'll colorize the output password."""
-    pass
+    for _ in rstr:
+        if _.isalpha():
+            print(cf.on_blue(_), end="")
+        elif _.isnumeric():
+            print(cf.on_red(_), end="")
+        else:
+            print(cf.on_green(_), end="")
+
+
+def rstring(num: int) -> str:
+    """Helper function to create a colorcoded random string."""
+    return colorizer(
+        "".join([secrets.choice(string.printable[:94]) for _ in range(num)]),
+    )
 
 
 def callback_passwd(value: int = 8) -> str:
