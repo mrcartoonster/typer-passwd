@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import secrets
 import string
-from typing import Optional
+from typing import Optional, Sequence
 
 import colorful as cf
 import typer
@@ -11,7 +11,7 @@ app = typer.Typer()
 __version__ = "0.1.0"
 
 
-def version_callback(value: bool):
+def version_callback(value: bool) -> str:
     """Returning versin of typer-passwd."""
     ver_num = cf.bold_green(__version__)
     if value:
@@ -22,6 +22,11 @@ def version_callback(value: bool):
 def rstring(num: int) -> str:
     """Helper function to create a random string."""
     return "".join([secrets.choice(string.printable[:94]) for _ in range(num)])
+
+
+def colorizer(rstr: Sequence[str]) -> str:
+    """Helper function that'll colorize the output password."""
+    pass
 
 
 def callback_passwd(value: int = 8) -> str:
