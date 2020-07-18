@@ -24,3 +24,14 @@ def test_amount():
     result = runner.invoke(app, ["10"])
     assert result.exit_code == 0
     assert 11 == len(result.stdout)
+
+
+@pytest.mark.parametrize("gtlt", [7, 65])
+@pytest.mark.second
+def test_badparameter(gtlt):
+    """Assure Error occurs when a number is entered that's less than eight and
+    greater than sixty-four."""
+    err_msg = "Password length must be between eight(8 to sixty-four(64)!)"
+    result = runner.invoke(app, [str(gtlt)])
+    assert result.exit_code == 2
+    assert err_msg in result.stderr
