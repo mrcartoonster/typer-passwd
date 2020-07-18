@@ -31,7 +31,11 @@ def test_amount():
 def test_badparameter(gtlt):
     """Assure Error occurs when a number is entered that's less than eight and
     greater than sixty-four."""
-    err_msg = "Password length must be between eight(8 to sixty-four(64)!)"
+    err_msg = (
+        "Usage: main [OPTIONS] [AMOUNT]\n\nError: Invalid value for '[AMOUNT]'"
+        + ": Password length must be between eight(8) to sixty-four(64)!\n"
+    )
     result = runner.invoke(app, [str(gtlt)])
+    result.output
     assert result.exit_code == 2
-    assert err_msg in result.stderr
+    assert err_msg == result.stdout

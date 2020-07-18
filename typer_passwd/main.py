@@ -41,7 +41,7 @@ def callback_passwd(value: int = 8) -> str:
     """Typer callback function to generate random string."""
     if value < 8 or value > 64:
         raise typer.BadParameter(
-            "Password length must be between eight(8) to sixtyfour(64)!",
+            "Password length must be between eight(8) to sixty-four(64)!",
         )
     else:
         return rstring(value)
