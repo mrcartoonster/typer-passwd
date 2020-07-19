@@ -23,11 +23,11 @@ def colorizer(rstr: Sequence[str]) -> str:
     """Helper function that'll colorize the output password."""
     for _ in rstr:
         if _.isalpha():
-            print(cf.on_blue(_), end="")
+            print(cf.white(_), end="")
         elif _.isnumeric():
-            print(cf.on_red(_), end="")
+            print(cf.red(_), end="")
         else:
-            print(cf.on_green(_), end="")
+            print(cf.blue(_), end="")
 
 
 def rstring(num: int) -> str:
