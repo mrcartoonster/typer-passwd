@@ -12,7 +12,7 @@ __version__ = "0.1.0"
 
 
 def version_callback(value: bool) -> str:
-    """Returning versin of typer-passwd."""
+    """Returns version of typer-passwd."""
     ver_num = cf.bold_green(__version__)
     if value:
         typer.echo(f"typer-passwd version: {ver_num}")
@@ -33,7 +33,7 @@ def colorizer(rstr: Sequence[str]) -> str:
 def rstring(num: int) -> str:
     """Helper function to create a colorcoded random string."""
     return colorizer(
-        "".join([secrets.choice(string.printable[:94]) for _ in range(num)]),
+       [secrets.choice(string.printable[:94]) for _ in range(num)],
     )
 
 
