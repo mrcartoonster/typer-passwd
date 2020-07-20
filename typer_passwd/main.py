@@ -21,6 +21,7 @@ def version_callback(value: bool) -> str:
 
 def colorizer(rstr: Sequence[str]) -> str:
     """Helper function that'll colorize the output password."""
+    # work on changing this from print to return.
     for _ in rstr:
         if _.isalpha():
             print(cf.white(_), end="")
@@ -33,7 +34,7 @@ def colorizer(rstr: Sequence[str]) -> str:
 def rstring(num: int) -> str:
     """Helper function to create a colorcoded random string."""
     return colorizer(
-       [secrets.choice(string.printable[:94]) for _ in range(num)],
+        [secrets.choice(string.printable[:94]) for _ in range(num)],
     )
 
 
