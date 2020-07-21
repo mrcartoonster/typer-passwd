@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import secrets
 import string
-from typing import Optional, Sequence
+from typing import List, Optional, Sequence
 
-import colorful as cf
 import typer
 from wasabi import color as c
 
@@ -14,32 +13,38 @@ __version__ = "0.1.0"
 
 def version_callback(value: bool) -> None:
     """Returns version of typer-passwd."""
-    ver_num = cf.bold_green(__version__)
+    ver_num = c(__version__, fg="green", bold=True)
     if value:
         typer.echo(f"typer-passwd version: {ver_num}")
         raise typer.Exit()
 
 
-def colorizer(rstr: Sequence[str]) -> None:
-    """Helper function that'll colorize the output password."""
-    # work on changing this from print to return.
+def colorizer(rstr: Sequence[str]):
+
+    """Returns colored output of strings.
+
+    Where letters are white, numbers are red, and special characters are
+    blue.
+    """
+    l: List[str] = []
     for _ in rstr:
         if _.isalpha():
-            return c(_, fg="white")
+            l.append(c(_, fg="white"))
         elif _.isnumeric():
-            return c(_, fg="red")
+            l.append(c(_, fg="red"))
         else:
-            return c(_, fg="blue")
+            l.append(c(_, fg="blue"))
+    return "".join(l)
 
 
-def rstring(num: int) -> None:
+def rstring(num: int):
     """Helper function to create a colorcoded random string."""
     return colorizer(
         [secrets.choice(string.printable[:94]) for _ in range(num)],
     )
 
 
-def callback_passwd(value: int = 8) -> str:
+def callback_passwd(value: int = 8):
     """Typer callback function to generate random string."""
     if value < 8 or value > 64:
         raise typer.BadParameter(

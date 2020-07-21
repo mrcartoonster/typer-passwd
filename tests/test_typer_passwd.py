@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import colorful as cf
 import pytest
 from typer.testing import CliRunner
+from wasabi import color as c
 
 from typer_passwd import __version__
 from typer_passwd.main import app
@@ -9,10 +9,11 @@ from typer_passwd.main import app
 runner = CliRunner()
 
 
-def test_version():
+@pytest.mark.parametrize("v", ["-v", "--version"])
+def test_version(v):
     """Checking version is set correclty."""
-    ver_num = cf.bold_green(__version__)
-    result = runner.invoke(app, ["--version"], color=True)
+    ver_num = c(__version__, fg="green", bold=True)
+    result = runner.invoke(app, [v], color=True)
     assert result.exit_code == 0
     assert f"typer-passwd version: {ver_num}"
     assert __version__ == "0.1.0"
