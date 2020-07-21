@@ -40,7 +40,7 @@ repos:
           - --line-length=79
           - --verbose
 -   repo: https://github.com/timothycrosley/isort
-    rev: 5.0.8
+    rev: 5.1.4
     hooks:
     -   id: isort
         args:

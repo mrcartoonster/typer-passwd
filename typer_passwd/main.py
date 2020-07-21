@@ -5,13 +5,14 @@ from typing import Optional, Sequence
 
 import colorful as cf
 import typer
+from wasabi import color as c
 
 app = typer.Typer()
 
 __version__ = "0.1.0"
 
 
-def version_callback(value: bool) -> str:
+def version_callback(value: bool) -> None:
     """Returns version of typer-passwd."""
     ver_num = cf.bold_green(__version__)
     if value:
@@ -19,19 +20,19 @@ def version_callback(value: bool) -> str:
         raise typer.Exit()
 
 
-def colorizer(rstr: Sequence[str]) -> str:
+def colorizer(rstr: Sequence[str]) -> None:
     """Helper function that'll colorize the output password."""
     # work on changing this from print to return.
     for _ in rstr:
         if _.isalpha():
-            print(cf.white(_), end="")
+            return c(_, fg="white")
         elif _.isnumeric():
-            print(cf.red(_), end="")
+            return c(_, fg="red")
         else:
-            print(cf.blue(_), end="")
+            return c(_, fg="blue")
 
 
-def rstring(num: int) -> str:
+def rstring(num: int) -> None:
     """Helper function to create a colorcoded random string."""
     return colorizer(
         [secrets.choice(string.printable[:94]) for _ in range(num)],
