@@ -26,7 +26,7 @@ def colorizer(rstr: Sequence[str]):
     Where letters are white, numbers are red, and special characters are
     blue.
     """
-    l: List[str] = []
+    l = []
     for _ in rstr:
         if _.isalpha():
             l.append(c(_, fg="white"))
@@ -39,9 +39,7 @@ def colorizer(rstr: Sequence[str]):
 
 def rstring(num: int):
     """Helper function to create a colorcoded random string."""
-    return colorizer(
-        [secrets.choice(string.printable[:94]) for _ in range(num)],
-    )
+    return colorizer([secrets.choice(string.printable[:94]) for _ in range(num)],)
 
 
 def callback_passwd(value: int = 8):
