@@ -19,7 +19,7 @@ def version_callback(value: bool) -> None:
         raise typer.Exit()
 
 
-def colorizer(rstr: Sequence[str]):
+def colorizer(random_str: Sequence[str]):
 
     """Returns colored output of strings.
 
@@ -27,7 +27,7 @@ def colorizer(rstr: Sequence[str]):
     blue.
     """
     color_str = []
-    for _ in rstr:
+    for _ in random_str:
         if _.isalpha():
             color_str.append(c(_, fg="white"))
         elif _.isnumeric():
