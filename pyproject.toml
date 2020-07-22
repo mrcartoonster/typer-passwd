@@ -28,9 +28,10 @@ pytest-html = "^2.1.1"
 Commitizen = "^1.23.0"
 conventional-JIRA = "^0.2.2"
 commitizen-emoji = "^0.1.5"
+cz_conventional_JIRA = "^0.2.0"
 
 [tool.commitizen]
-name = "cz_conventional_commits"
+name = "cz_jira"
 version = "0.1.0"
 version_files = [
     "src/__version__.py",

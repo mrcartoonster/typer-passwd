@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import secrets
 import string
-from typing import List, Optional, Sequence
+from typing import Optional, Sequence
 
 import typer
 from wasabi import color as c
@@ -26,20 +26,22 @@ def colorizer(rstr: Sequence[str]):
     Where letters are white, numbers are red, and special characters are
     blue.
     """
-    l = []
+    color_str = []
     for _ in rstr:
         if _.isalpha():
-            l.append(c(_, fg="white"))
+            color_str.append(c(_, fg="white"))
         elif _.isnumeric():
-            l.append(c(_, fg="red"))
+            color_str.append(c(_, fg="red"))
         else:
-            l.append(c(_, fg="blue"))
-    return "".join(l)
+            color_str.append(c(_, fg="blue"))
+    return "".join(color_str)
 
 
 def rstring(num: int):
     """Helper function to create a colorcoded random string."""
-    return colorizer([secrets.choice(string.printable[:94]) for _ in range(num)],)
+    return colorizer(
+        [secrets.choice(string.printable[:94]) for _ in range(num)],
+    )
 
 
 def callback_passwd(value: int = 8):

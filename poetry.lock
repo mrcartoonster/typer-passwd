@@ -133,6 +133,17 @@ toml = ["toml"]
 
 [[package]]
 category = "dev"
+description = ""
+name = "cz-conventional-jira"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "0.2.0"
+
+[package.dependencies]
+commitizen = ">=1.17.0,<2.0.0"
+
+[[package]]
+category = "dev"
 description = "Minimal, easy-to-use, declarative cli tool"
 name = "decli"
 optional = false
@@ -723,7 +734,7 @@ python-versions = "*"
 version = "1.7.0"
 
 [metadata]
-content-hash = "f3f2aee8ac6d7bef766c07ba64ebfc620cbb1454156c6110936d39962027703e"
+content-hash = "a7db290d0303e9a26f04f6e53526a7fd3eb367bee1d7fa7a91dcd27cd62883ab"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -808,6 +819,10 @@ coverage = [
     {file = "coverage-5.2-cp39-cp39-win32.whl", hash = "sha256:d67599521dff98ec8c34cd9652cbcfe16ed076a2209625fca9dc7419b6370e5c"},
     {file = "coverage-5.2-cp39-cp39-win_amd64.whl", hash = "sha256:10f2a618a6e75adf64329f828a6a5b40244c1c50f5ef4ce4109e904e69c71bd2"},
     {file = "coverage-5.2.tar.gz", hash = "sha256:1874bdc943654ba46d28f179c1846f5710eda3aeb265ff029e0ac2b52daae404"},
+]
+cz-conventional-jira = [
+    {file = "cz-conventional-jira-0.2.0.tar.gz", hash = "sha256:941f6752bbebf9abc6412cc239c87b2a432e6f3f123125718d646d93a4572558"},
+    {file = "cz_conventional_jira-0.2.0-py3-none-any.whl", hash = "sha256:46556259d767ccea09015dcc7d4abf939ef457db9ad2eaae8b1fb970c95d4dc8"},
 ]
 decli = [
     {file = "decli-0.5.1-py3-none-any.whl", hash = "sha256:36dbda6cc9fdd7880b7ee141bccab048672307f4f419072aa1a394b01cb10a32"},

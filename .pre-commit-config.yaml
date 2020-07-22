@@ -63,11 +63,11 @@ repos:
       - id: docformatter
         args: [--in-place]
 # Below is opinionated lintesr and formatters. Uncomment at your own risk!
-# -   repo: https://github.com/commitizen-tools/commitizen
-#     rev: v1.23.1
-#     hooks:
-#       - id: commitizen
-#         stages: [commit-msg]
+-   repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.23.1
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
 # -   repo: https://github.com/econchick/interrogate
 #     rev: 1.2.0
 #     hooks:
