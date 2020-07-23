@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/home/mrnobody/.pyenv/versions/3.8.2/bin/python"
+    "python.pythonPath": "/home/mrnobody/.cache/pypoetry/virtualenvs/typer-passwd-SJJFUjeF-py3.8",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
 }
