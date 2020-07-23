@@ -29,6 +29,7 @@ Commitizen = "^1.23.0"
 conventional-JIRA = "^0.2.2"
 commitizen-emoji = "^0.1.5"
 cz_conventional_JIRA = "^0.2.0"
+black = {version = "^19.10b0", allow-prereleases = true}
 
 [tool.commitizen]
 name = "cz_jira"

@@ -33,6 +33,7 @@ def colorizer(random_str: Sequence[str]):
         elif _.isnumeric():
             color_str.append(c(_, fg="red"))
         else:
+            # This is Blue1. A deep blue.
             color_str.append(c(_, fg=21))
     return "".join(color_str)
 
