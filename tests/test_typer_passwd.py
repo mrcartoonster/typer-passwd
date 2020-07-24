@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import pytest
-import typer
 from typer.testing import CliRunner
 from wasabi import color as c
 
@@ -38,24 +37,5 @@ def test_badparameter(gtlt):
         + ": Password length must be between eight(8) to sixty-four(64)!\n"
     )
     result = runner.invoke(app, [str(gtlt)])
-    result.output
     assert result.exit_code == 2
     assert err_msg == result.stdout
-
-
-@pytest.mark.parametrize("gtlt", [7, 65])
-@pytest.mark.third
-def test_badparameter_with(gtlt):
-    """Assure Error occurs when a number is entered that's less than eight and
-    greater than sixty-four."""
-    err_msg = (
-        "Usage: main [OPTIONS] [AMOUNT]\n\nError: Invalid value for '[AMOUNT]'"
-        + ": Password length must be between eight(8) to sixty-four(64)!\n"
-    )
-    with pytest.raises(typer.BadParameter, match=err_msg) as e:
-        raise typer.BadParameter(err_msg)
-    result = runner.invoke(app, [str(gtlt)])
-    result.output
-    assert result.exit_code == 2
-    assert err_msg == result.stdout
-    assert e.type is typer.BadParameter
