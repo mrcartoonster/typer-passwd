@@ -52,8 +52,7 @@ style = [
 ]
 
 [tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "-rsxX -l --tb=short -strinct --emoji -vvv"
+addopts = "-rsxX -l --tb=short --strict --emoji -vvv"
 markers = [
     "first: Testing length of password",
     "second: Testing receive error when number entered is out of bounds.",
