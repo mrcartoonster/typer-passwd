@@ -53,8 +53,9 @@ def test_badparameter_with(gtlt):
         + ": Password length must be between eight(8) to sixty-four(64)!\n"
     )
     with pytest.raises(typer.BadParameter, match=err_msg) as e:
-        result = runner.invoke(app, [str(gtlt)])
-        result.output
-        assert result.exit_code == 2
-        # assert err_msg == result.stdout
-        assert e.type is typer.BadParameter
+        raise typer.BadParameter(err_msg)
+    result = runner.invoke(app, [str(gtlt)])
+    result.output
+    assert result.exit_code == 2
+    assert err_msg == result.stdout
+    assert e.type is typer.BadParameter

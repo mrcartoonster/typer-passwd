@@ -4,6 +4,8 @@
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
+typer_passwd/.vscode
+.vscode
 __pycache__/
 *.py[cod]
 *$py.class
