@@ -38,11 +38,19 @@ def colorizer(random_str: Sequence[str]):
     return "".join(color_str)
 
 
-def rstring(num: int):
-    """Helper function to create a colorcoded random string."""
-    return colorizer(
-        [secrets.choice(string.printable[:94]) for _ in range(num)],
-    )
+def rstring(num: int, no: bool = False):
+    """Helper function to create a colorcoded random string.
+
+    As well as non colorcoded random string if given the option --no-
+    color/-nc.
+    """
+
+    if no:
+        return [secrets.choice(string.printable[:94]) for _ in range(num)]
+    else:
+        return colorizer(
+            [secrets.choice(string.printable[:94]) for _ in range(num)],
+        )
 
 
 def callback_passwd(value: int = 8):
