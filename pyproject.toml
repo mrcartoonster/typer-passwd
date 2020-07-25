@@ -5,6 +5,9 @@ description = "Simple CLI app that generates random passwords."
 authors = ["Mrnobody <mrcartoonster@icloud.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+typer-passwd = "typer_passwd.main:app"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = {extras = ["all"], version = "^0.3.0"}
