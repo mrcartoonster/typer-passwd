@@ -14,7 +14,6 @@ pyperclip = "^1.8.0"
 wasabi = "^0.7.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 pytest-emoji = "^0.2.0"
 pytest-picked = "^0.4.4"
 pytest-instafail = "^0.4.2"
@@ -30,6 +29,7 @@ conventional-JIRA = "^0.2.2"
 commitizen-emoji = "^0.1.5"
 cz_conventional_JIRA = "^0.2.0"
 black = {version = "^19.10b0", allow-prereleases = true}
+pytest = ">=6.0.0rc1"
 
 [tool.commitizen]
 name = "cz_jira"
@@ -48,9 +48,15 @@ style = [
     ["separator", "fg:#cc5454"],
     ["instruction", ""],
     ["text", ""],
-    ["disabled", "fg:#858585 italic"]
+    ["disabled", "fg:#858585 italic"],
 ]
 
+[tool.pytest.ini_options]
+addopts = "-rsxX -l --tb=short --strict --emoji -vvv"
+markers = [
+    "first: Testing length of password",
+    "second: Testing receive error when number entered is out of bounds.",
+]
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
