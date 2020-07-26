@@ -41,12 +41,14 @@ def colorizer(random_str: Sequence[str]):
 def rstring(num: int, no: bool = False):
     """Helper function to create a colorcoded random string.
 
-    As well as non colorcoded random string if given the option --no-
+    As well as non color-coded random string if given the option --no-
     color/-nc.
     """
 
     if no:
-        return [secrets.choice(string.printable[:94]) for _ in range(num)]
+        return "".join(
+            [secrets.choice(string.printable[:94]) for _ in range(num)],
+        )
     else:
         return colorizer(
             [secrets.choice(string.printable[:94]) for _ in range(num)],
@@ -63,12 +65,30 @@ def callback_passwd(value: int = 8):
         return rstring(value)
 
 
+def callback_no_color(value: int = 8):
+    """Typer callback function that will generate random non color-code
+    password."""
+    if value < 8 or value > 64:
+        raise typer.BadParameter(
+            "Password length must be between eight(8) to sixty-four(64)!",
+        )
+    else:
+        return rstring(value, True)
+
+
 @app.command()
 def main(
     amount: int = typer.Argument(
         8,
         callback=callback_passwd,
-        help="Takes integer for the length of random password.",
+        help="Takes integer for the length of random color-coded password.",
+    ),
+    no_color: Optional[int] = typer.Option(
+        8,
+        "--no-color",
+        "-nc",
+        callback=callback_no_color,
+        help="Take integer for the lenght of random non-color-coded password.",
     ),
     version: Optional[bool] = typer.Option(
         None, "--version", "-v", callback=version_callback,
