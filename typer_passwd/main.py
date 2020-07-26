@@ -83,23 +83,21 @@ def main(
         callback=callback_passwd,
         help="Takes integer for the length of random color-coded password.",
     ),
-    no_color: Optional[int] = typer.Option(
+    no_color: int = typer.Option(
         8,
         "--no-color",
         "-nc",
         callback=callback_no_color,
-        help="Take integer for the lenght of random non-color-coded password.",
+        help="Take integer for the length of random non-color-coded password.",
     ),
     version: Optional[bool] = typer.Option(
-        None, "--version", "-v", callback=version_callback,
+        None,
+        "--version",
+        "-v",
+        callback=version_callback,
+        help="Returns current version of typer-passwd.",
     ),
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
     typer.echo(amount)
-
-
-# Placing main while developing
-if __name__ == "__main__":
-    app()
-    # typer.run(main)
