@@ -1,9 +1,7 @@
 # `typer-passwd`
 > Quick typer cli app that'll give colored random passwords!
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+[![PyPI version](https://badge.fury.io/py/typer-passwd.svg)](https://badge.fury.io/py/typer-passwd)
 
 Are you sick and tired of coming up with a password for every website you go to or being forced to reset your password every 30, 90 days??? Well you came to the right place! Just [pip install](https://realpython.com/what-is-pip/#installing-packages-with-pip), or better yet(!), [pipx](https://pipxproject.github.io/pipx/examples/#pipx-install-examples) `typer-passwd` and you'll never have to worry about coming up with certain length passwords that need a number, special character, blood, urine sample...
 ![](header.png)
@@ -68,10 +66,3 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
