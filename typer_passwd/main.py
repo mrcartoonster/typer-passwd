@@ -45,9 +45,13 @@ def rstring(num: int, no: bool = False):
     """
 
     if no:
-        return "".join([secrets.choice(string.printable[:94]) for _ in range(num)],)
+        return "".join(
+            [secrets.choice(string.printable[:94]) for _ in range(num)],
+        )
     else:
-        return colorizer([secrets.choice(string.printable[:94]) for _ in range(num)],)
+        return colorizer(
+            [secrets.choice(string.printable[:94]) for _ in range(num)],
+        )
 
 
 def callback_color(value: int = 8):
@@ -60,7 +64,7 @@ def callback_color(value: int = 8):
         return rstring(value)
 
 
-def callback_no_color(value: int):
+def callback_no_color(value: int = 8):
     """Typer callback function that will generate random non color-code
     password."""
     if value < 8 or value > 64:
@@ -69,13 +73,13 @@ def callback_no_color(value: int):
             "Password length must be between eight(8) to sixty-four(64)!",
         )
     else:
-        return rstring(value, True)
+        return rstring(value, "no")
 
 
 @app.command()
 def main(
     color: int = typer.Argument(
-        ...,
+        8,
         callback=callback_color,
         help="Takes integer for the length of random color-coded password.",
     ),
