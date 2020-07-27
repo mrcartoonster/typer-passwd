@@ -20,7 +20,6 @@ def version_callback(value: bool) -> None:
 
 
 def colorizer(random_str: Sequence[str]):
-
     """Returns colored output of strings.
 
     Where letters are white, numbers are red, and special characters are
@@ -39,23 +38,19 @@ def colorizer(random_str: Sequence[str]):
 
 
 def rstring(num: int, no: bool = False):
-    """Helper function to create a colorcoded random string.
+    """Helper function to create a color-coded random string.
 
     As well as non color-coded random string if given the option --no-
     color/-nc.
     """
 
     if no:
-        return "".join(
-            [secrets.choice(string.printable[:94]) for _ in range(num)],
-        )
+        return "".join([secrets.choice(string.printable[:94]) for _ in range(num)],)
     else:
-        return colorizer(
-            [secrets.choice(string.printable[:94]) for _ in range(num)],
-        )
+        return colorizer([secrets.choice(string.printable[:94]) for _ in range(num)],)
 
 
-def callback_passwd(value: int = 8):
+def callback_color(value: int = 8):
     """Typer callback function to generate random string."""
     if value < 8 or value > 64:
         raise typer.BadParameter(
@@ -65,10 +60,11 @@ def callback_passwd(value: int = 8):
         return rstring(value)
 
 
-def callback_no_color(value: int = 8):
+def callback_no_color(value: int):
     """Typer callback function that will generate random non color-code
     password."""
     if value < 8 or value > 64:
+
         raise typer.BadParameter(
             "Password length must be between eight(8) to sixty-four(64)!",
         )
@@ -78,12 +74,12 @@ def callback_no_color(value: int = 8):
 
 @app.command()
 def main(
-    amount: int = typer.Argument(
-        8,
-        callback=callback_passwd,
+    color: int = typer.Argument(
+        ...,
+        callback=callback_color,
         help="Takes integer for the length of random color-coded password.",
     ),
-    no_clr: int = typer.Option(
+    no_color: int = typer.Option(
         8,
         "--no-color",
         "-nc",
@@ -101,7 +97,4 @@ def main(
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
-    if no_clr:
-        typer.echo(no_clr)
-    else:
-        typer.echo(amount)
+    typer.echo(color)
