@@ -83,7 +83,7 @@ def main(
         callback=callback_passwd,
         help="Takes integer for the length of random color-coded password.",
     ),
-    no_color: int = typer.Option(
+    no_clr: int = typer.Option(
         8,
         "--no-color",
         "-nc",
@@ -96,8 +96,12 @@ def main(
         "-v",
         callback=version_callback,
         help="Returns current version of typer-passwd.",
+        is_eager=True,
     ),
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
-    typer.echo(amount)
+    if no_clr:
+        typer.echo(no_clr)
+    else:
+        typer.echo(amount)
