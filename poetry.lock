@@ -106,8 +106,8 @@ category = "dev"
 description = "Python commitizen client tool"
 name = "commitizen"
 optional = false
-python-versions = ">=3.6,<4.0"
-version = "1.23.0"
+python-versions = ">=3.6.1,<4.0.0"
+version = "1.25.0"
 
 [package.dependencies]
 colorama = ">=0.4.1,<0.5.0"
@@ -168,7 +168,7 @@ description = "Minimal, easy-to-use, declarative cli tool"
 name = "decli"
 optional = false
 python-versions = ">=3.6"
-version = "0.5.1"
+version = "0.5.2"
 
 [[package]]
 category = "dev"
@@ -204,14 +204,6 @@ version = "1.4.25"
 
 [package.extras]
 license = ["editdistance"]
-
-[[package]]
-category = "dev"
-description = "iniconfig: brain-dead simple config-ini parsing"
-name = "iniconfig"
-optional = false
-python-versions = "*"
-version = "1.0.0"
 
 [[package]]
 category = "dev"
@@ -489,21 +481,20 @@ description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
 python-versions = ">=3.5"
-version = "6.0.0rc1"
+version = "5.4.3"
 
 [package.dependencies]
 atomicwrites = ">=1.0"
 attrs = ">=17.4.0"
 colorama = "*"
-iniconfig = "*"
 more-itertools = ">=4.0.0"
 packaging = "*"
 pluggy = ">=0.12,<1.0"
-py = ">=1.8.2"
-toml = "*"
+py = ">=1.5.0"
+wcwidth = "*"
 
 [package.extras]
-checkqa_mypy = ["mypy (0.780)"]
+checkqa-mypy = ["mypy (v0.761)"]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
@@ -778,7 +769,8 @@ python-versions = "*"
 version = "1.7.0"
 
 [metadata]
-content-hash = "004080bc1274c4d6290dab6d490f061450ccd939414b896a4f35629ae1655e30"
+content-hash = "05810ba6ab4b44fcda3c4075882f448710c47a5ab8947d557c215d7954a566b9"
+lock-version = "1.0"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -823,8 +815,8 @@ colorful = [
     {file = "colorful-0.5.4.tar.gz", hash = "sha256:86848ad4e2eda60cd2519d8698945d22f6f6551e23e95f3f14dfbb60997807ea"},
 ]
 commitizen = [
-    {file = "commitizen-1.23.0-py3-none-any.whl", hash = "sha256:360b46a0454aa62e310e566723ad1ae191e2da1f6aa9d87fff1a9b75bd151b38"},
-    {file = "commitizen-1.23.0.tar.gz", hash = "sha256:faf0780b2f5a9f139e0d6f0114145e8350cfc1a87bbc89e2405c47670f43d81d"},
+    {file = "commitizen-1.25.0-py3-none-any.whl", hash = "sha256:d2d461c9a9e4e153e74f7799a60b254ffa336d542d518eda55d8c66610e7fc5f"},
+    {file = "commitizen-1.25.0.tar.gz", hash = "sha256:c2dd66db3f50c8a56271ad8d9a98e3c05a7ea352a4aef81cd6d0eb3f43710f05"},
 ]
 commitizen-emoji = [
     {file = "commitizen_emoji-0.1.5.tar.gz", hash = "sha256:ab44f8444151e2ec5ca2bb6a69aa5c6b2542a75330fbc751b3b9feba6a8beeaa"},
@@ -873,8 +865,8 @@ cz-conventional-jira = [
     {file = "cz_conventional_jira-0.2.0-py3-none-any.whl", hash = "sha256:46556259d767ccea09015dcc7d4abf939ef457db9ad2eaae8b1fb970c95d4dc8"},
 ]
 decli = [
-    {file = "decli-0.5.1-py3-none-any.whl", hash = "sha256:36dbda6cc9fdd7880b7ee141bccab048672307f4f419072aa1a394b01cb10a32"},
-    {file = "decli-0.5.1.tar.gz", hash = "sha256:1454aeee315130e979754137c46f3a9294674b17c3055c350bc4cd0c2d7f0f0e"},
+    {file = "decli-0.5.2-py3-none-any.whl", hash = "sha256:d3207bc02d0169bf6ed74ccca09ce62edca0eb25b0ebf8bf4ae3fb8333e15ca0"},
+    {file = "decli-0.5.2.tar.gz", hash = "sha256:f2cde55034a75c819c630c7655a844c612f2598c42c21299160465df6ad463ad"},
 ]
 decorator = [
     {file = "decorator-4.4.2-py2.py3-none-any.whl", hash = "sha256:41fa54c2a0cc4ba648be4fd43cff00aedf5b9465c9bf18d64325bc225f08f760"},
@@ -891,9 +883,6 @@ filelock = [
 identify = [
     {file = "identify-1.4.25-py2.py3-none-any.whl", hash = "sha256:ccd88716b890ecbe10920659450a635d2d25de499b9a638525a48b48261d989b"},
     {file = "identify-1.4.25.tar.gz", hash = "sha256:110ed090fec6bce1aabe3c72d9258a9de82207adeaa5a05cd75c635880312f9a"},
-]
-iniconfig = [
-    {file = "iniconfig-1.0.0.tar.gz", hash = "sha256:aa0b40f50a00e72323cb5d41302f9c6165728fd764ac8822aa3fff00a40d56b4"},
 ]
 interrogate = [
     {file = "interrogate-1.2.0-py3-none-any.whl", hash = "sha256:daba87d40cf8742534a61bd190d9986f7b4b1364f71023cbfae5323c4ebe6042"},
@@ -1029,8 +1018,8 @@ pyperclip = [
     {file = "pyperclip-1.8.0.tar.gz", hash = "sha256:b75b975160428d84608c26edba2dec146e7799566aea42c1fe1b32e72b6028f2"},
 ]
 pytest = [
-    {file = "pytest-6.0.0rc1-py3-none-any.whl", hash = "sha256:3296b4ad0b07363f69b740edf70e40db8286f882f019179b31e6a03d896afbff"},
-    {file = "pytest-6.0.0rc1.tar.gz", hash = "sha256:c934e33079966229fd236ffae6a7a3c3415bd585693a646ba3adb62a2d695874"},
+    {file = "pytest-5.4.3-py3-none-any.whl", hash = "sha256:5c0db86b698e8f170ba4582a492248919255fcd4c79b1ee64ace34301fb589a1"},
+    {file = "pytest-5.4.3.tar.gz", hash = "sha256:7979331bfcba207414f5e1263b5a0f8f521d0f457318836a7355531ed1a4c7d8"},
 ]
 pytest-cov = [
     {file = "pytest-cov-2.10.0.tar.gz", hash = "sha256:1a629dc9f48e53512fcbfda6b07de490c374b0c83c55ff7a1720b3fccff0ac87"},
