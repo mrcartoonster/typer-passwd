@@ -8,7 +8,7 @@ from wasabi import color as c
 
 app = typer.Typer()
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def version_callback(value: bool) -> None:

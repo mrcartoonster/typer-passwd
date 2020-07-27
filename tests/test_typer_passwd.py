@@ -17,7 +17,7 @@ def test_version(v):
     result = runner.invoke(app, [v], color=True)
     assert result.exit_code == 0
     assert f"typer-passwd version: {ver_num}"
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.1.1"
 
 
 @pytest.mark.first
