@@ -69,6 +69,7 @@ def callback_no_color(value: int = 8):
     """Typer callback function that will generate random non color-code
     password."""
     if value < 8 or value > 64:
+
         raise typer.BadParameter(
             "Password length must be between eight(8) to sixty-four(64)!",
         )
@@ -86,7 +87,6 @@ def main(
     no_clr: int = typer.Option(
         8,
         "--no-color",
-        "-nc",
         callback=callback_no_color,
         help="Take integer for the length of random non-color-coded password.",
     ),
@@ -101,7 +101,7 @@ def main(
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
-    if no_clr:
-        typer.echo(no_clr)
-    else:
+    if amount:
         typer.echo(amount)
+    else:
+        typer.echo(no_clr)
