@@ -81,16 +81,16 @@ def callback_no_color(ctx: typer.Context, value: int = 8) -> str:
 @app.command()
 def main(
     color: int = typer.Argument(
-        8,
+        ...,
         callback=callback_color,
         help="Takes integer for the length of random color-coded password.",
     ),
-    no_color: bool = typer.Option(
-        False,
+    no_color: int = typer.Option(
+        8,
         "--no-color",
         "-nc",
         help="Take integer for the length of random non-color-coded password.",
-        # callback=callback_no_color,
+        callback=callback_no_color,
     ),
     version: Optional[bool] = typer.Option(
         None,
@@ -103,7 +103,4 @@ def main(
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
-    if no_color:
-        typer.echo(callback_no_color())
-    else:
-        typer.echo(color)
+    typer.echo(color)
