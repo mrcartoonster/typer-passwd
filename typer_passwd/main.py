@@ -6,9 +6,11 @@ from typing import Optional, Sequence
 import typer
 from wasabi import color as c
 
-app = typer.Typer()
+app = typer.Typer(
+    help="Create randomly generated passwords straight from the command line!",
+)
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 def version_callback(value: bool) -> None:
@@ -69,8 +71,9 @@ def callback_color(ctx: typer.Context, value: int = 8) -> str:
 def callback_no_color(ctx: typer.Context, value: int = 8) -> str:
     """Typer callback function that will generate random non color-code
     password."""
+    if ctx.resilient_parsing:
+        return
     if value < 8 or value > 64:
-
         raise typer.BadParameter(
             "Password length must be between eight to sixty-four!",
         )
@@ -79,28 +82,41 @@ def callback_no_color(ctx: typer.Context, value: int = 8) -> str:
 
 
 @app.command()
-def main(
+def no_coloring(
+    no_color: int = typer.Argument(
+        8,
+        callback=callback_no_color,
+        help="Returns random password with no color.",
+    ),
+):
+    """Returns an non-colored randomly generated password."""
+    typer.echo(no_color)
+
+
+@app.command(
+    help="Takes integer for the length of random color-coded password.",
+)
+def coloring(
     color: int = typer.Argument(
-        ...,
+        8,
         callback=callback_color,
         help="Takes integer for the length of random color-coded password.",
-    ),
-    no_color: int = typer.Option(
-        8,
-        "--no-color",
-        "-nc",
-        help="Take integer for the length of random non-color-coded password.",
-        callback=callback_no_color,
-    ),
-    version: Optional[bool] = typer.Option(
-        None,
-        "--version",
-        "-v",
-        callback=version_callback,
-        help="Returns current version of typer-passwd.",
-        is_eager=True,
     ),
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
     typer.echo(color)
+
+
+@app.callback()
+def main(
+    version: Optional[bool] = typer.Option(
+        None,
+        "--version",
+        "-v",
+        callback=version_callback,
+        help="Return current version of typer-passwd.",
+        is_eager=True,
+    ),
+):
+    pass
