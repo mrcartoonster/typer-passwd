@@ -425,6 +425,17 @@ virtualenv = ">=20.0.8"
 
 [[package]]
 category = "dev"
+description = "Prettifies Python exception output to make it legible."
+name = "pretty-errors"
+optional = false
+python-versions = "*"
+version = "1.2.17"
+
+[package.dependencies]
+colorama = "*"
+
+[[package]]
+category = "dev"
 description = "Library for building powerful interactive command lines in Python"
 name = "prompt-toolkit"
 optional = false
@@ -769,7 +780,7 @@ python-versions = "*"
 version = "1.7.0"
 
 [metadata]
-content-hash = "05810ba6ab4b44fcda3c4075882f448710c47a5ab8947d557c215d7954a566b9"
+content-hash = "132d28fcc3c95960383647f23eb4d01a83131d3a183e88d114fd2d0684631cd4"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -993,6 +1004,10 @@ pluggy = [
 pre-commit = [
     {file = "pre_commit-2.6.0-py2.py3-none-any.whl", hash = "sha256:e8b1315c585052e729ab7e99dcca5698266bedce9067d21dc909c23e3ceed626"},
     {file = "pre_commit-2.6.0.tar.gz", hash = "sha256:1657663fdd63a321a4a739915d7d03baedd555b25054449090f97bb0cb30a915"},
+]
+pretty-errors = [
+    {file = "pretty_errors-1.2.17-py3-none-any.whl", hash = "sha256:43b0d305b0b7fa4f6168091e617a4075d8607d1952c6fbc6d30fd34f66ac8006"},
+    {file = "pretty_errors-1.2.17.tar.gz", hash = "sha256:51c448a9e358768f0d7163823041c44548cedf6742f1cc4bc69a088d2661d55b"},
 ]
 prompt-toolkit = [
     {file = "prompt_toolkit-3.0.5-py3-none-any.whl", hash = "sha256:df7e9e63aea609b1da3a65641ceaf5bc7d05e0a04de5bd45d05dbeffbabf9e04"},

@@ -54,8 +54,10 @@ def rstring(num: int, no: bool = False):
         )
 
 
-def callback_color(value: int = 8):
+def callback_color(ctx: typer.Context, value: int = 8) -> str:
     """Typer callback function to generate random string."""
+    if ctx.resilient_parsing:
+        return
     if value < 8 or value > 64:
         raise typer.BadParameter(
             "Password length must be between eight(8) to sixty-four(64)!",
@@ -64,16 +66,16 @@ def callback_color(value: int = 8):
         return rstring(value)
 
 
-def callback_no_color(value: int = 8):
+def callback_no_color(ctx: typer.Context, value: int = 8) -> str:
     """Typer callback function that will generate random non color-code
     password."""
     if value < 8 or value > 64:
 
         raise typer.BadParameter(
-            "Password length must be between eight(8) to sixty-four(64)!",
+            "Password length must be between eight to sixty-four!",
         )
     else:
-        return rstring(value, "no")
+        return rstring(value, True)
 
 
 @app.command()
@@ -83,12 +85,12 @@ def main(
         callback=callback_color,
         help="Takes integer for the length of random color-coded password.",
     ),
-    no_color: int = typer.Option(
-        8,
+    no_color: bool = typer.Option(
+        False,
         "--no-color",
         "-nc",
-        callback=callback_no_color,
         help="Take integer for the length of random non-color-coded password.",
+        # callback=callback_no_color,
     ),
     version: Optional[bool] = typer.Option(
         None,
@@ -101,4 +103,7 @@ def main(
 ):
     """Outputs random password with the length given or eight(8) characters
     long by default."""
-    typer.echo(color)
+    if no_color:
+        typer.echo(callback_no_color())
+    else:
+        typer.echo(color)

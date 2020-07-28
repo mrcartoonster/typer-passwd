@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import pytest
-import typer
 from typer.testing import CliRunner
 from wasabi import color as c
 
