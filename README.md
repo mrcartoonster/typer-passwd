@@ -2,6 +2,7 @@
   <!--<img width="460" height="300" src="typpic.png">-->
   <img src="typpic.png">
 </p>
+
 # typer-passwd
 > Quick typer cli app that'll give colored random passwords!
 
