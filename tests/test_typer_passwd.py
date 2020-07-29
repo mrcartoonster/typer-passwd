@@ -19,13 +19,13 @@ def test_version(v):
     result = runner.invoke(app, [v], color=True)
     assert result.exit_code == 0
     assert f"typer-passwd version: {ver_num}"
-    assert __version__ == "0.1.3"
+    assert __version__ == "0.1.4"
 
 
 @pytest.mark.first
 def test_amount():
     """Check length of password."""
-    result = runner.invoke(app, ["coloring", "10"])
+    result = runner.invoke(app, ["color", "10"])
     assert result.exit_code == 0
     assert 11 == len(result.stdout)
 
@@ -36,11 +36,11 @@ def test_badparameter(gtlt):
     """Assure Error occurs when a number is entered that's less than eight and
     greater than sixty-four."""
     err_msg = (
-        "Usage: main coloring [OPTIONS] [COLOR]\n\nError: Invalid value"
+        "Usage: main color [OPTIONS] [COLOR]\n\nError: Invalid value"
         + " for '[COLOR]': Password length must be between eight(8)"
         + " to sixty-four(64)!\n"
     )
-    result = runner.invoke(app, ["coloring", str(gtlt)])
+    result = runner.invoke(app, ["color", str(gtlt)])
     result.output
     assert result.exit_code == 2
     assert err_msg == result.stdout

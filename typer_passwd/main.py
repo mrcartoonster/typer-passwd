@@ -84,7 +84,7 @@ def callback_no_color(ctx: typer.Context, value: int = 8) -> str:
 
 
 @app.command()
-def no_coloring(
+def no_color(
     no_color: int = typer.Argument(
         8,
         callback=callback_no_color,
@@ -98,7 +98,7 @@ def no_coloring(
 @app.command(
     help="Takes integer for the length of random color-coded password.",
 )
-def coloring(
+def color(
     color: int = typer.Argument(
         8,
         callback=callback_color,
