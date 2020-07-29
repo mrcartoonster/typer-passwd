@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="460" height="300" src="typpic.png">
+</p>
 # typer-passwd
 > Quick typer cli app that'll give colored random passwords!
 
@@ -55,7 +58,7 @@ $ typer-passwd no-coloring 55
 
 ## Meta
 
-Catch me on Twitter @ [@mrcartoonster](https://twitter.com/mrcartoonster) 
+Catch me on Twitter @ [@mrcartoonster](https://twitter.com/mrcartoonster)
 Or email me @ mrcartoonster@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
