@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "typer-passwd"
-version = "0.1.2"
+version = "0.1.3"
 description = "Simple CLI app that generates random passwords."
 authors = ["Mrnobody <mrcartoonster@icloud.com>"]
 readme = "README.md"
@@ -34,6 +34,7 @@ commitizen-emoji = "^0.1.5"
 cz_conventional_JIRA = "^0.2.0"
 black = {version = "^19.10b0", allow-prereleases = true}
 pretty_errors = "^1.2.17"
+termtosvg = "^1.1.0"
 
 [tool.commitizen]
 name = "cz_jira"

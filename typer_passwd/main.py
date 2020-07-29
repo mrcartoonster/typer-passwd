@@ -6,11 +6,13 @@ from typing import Optional, Sequence
 import typer
 from wasabi import color as c
 
+from . import __version__
+
 app = typer.Typer(
     help="Create randomly generated passwords straight from the command line!",
 )
 
-__version__ = "0.1.2"
+# __version__ = "0.1.2"
 
 
 def version_callback(value: bool) -> None:

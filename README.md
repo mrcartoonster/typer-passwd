@@ -1,4 +1,4 @@
-# `typer-passwd`
+# typer-passwd
 > Quick typer cli app that'll give colored random passwords!
 
 [![PyPI version](https://badge.fury.io/py/typer-passwd.svg)](https://badge.fury.io/py/typer-passwd)
@@ -10,58 +10,53 @@ Are you sick and tired of coming up with a password for every website you go to 
 
 OS X & Linux:
 
-```sh
-npm install my-crazy-module --save
+pipx install:
+
+```bash
+$ pipx install typer-passwd
 ```
 
-Windows:
+pip install:
 
-```sh
-edit autoexec.bat
+```bash
+$ pip install --user typer-passwd
 ```
+
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+The cli app is set to output 8 to 64 characters as this time. To output color randomly generated password:
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
+```bash
+$ typer-passwd coloring
 ```
+
+If you're wanting to output a password more than 8 characters in length just add the number you want.
+
+```bash
+$ typer-passwd coloring 55
+```
+
+If you want to view the password without color output then use the `no-color` argument:
+
+```bash
+$ typer-passwd no-coloring
+```
+
+As with `color` to generate a longer password, just add the number for the length of the password.
+
+```bash
+$ typer-passwd no-coloring 55
+```
+
 
 ## Release History
 
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Your Name – [@mrcartoonster](https://twitter.com/mrcartoonster) – mrcartoonster@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+[https://github.com/mrcartoonster/](https://github.com/mrcartoonster/typer-passwd)
