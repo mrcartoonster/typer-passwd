@@ -55,7 +55,8 @@ $ typer-passwd no-coloring 55
 
 ## Meta
 
-Your Name – [@mrcartoonster](https://twitter.com/mrcartoonster) – mrcartoonster@gmail.com
+Catch me on Twitter @ [@mrcartoonster](https://twitter.com/mrcartoonster) 
+Or email me @ mrcartoonster@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
