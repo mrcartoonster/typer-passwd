@@ -17,7 +17,6 @@ pyperclip = "^1.8.0"
 wasabi = "^0.7.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 pytest-emoji = "^0.2.0"
 pytest-picked = "^0.4.4"
 pytest-instafail = "^0.4.2"
@@ -35,6 +34,7 @@ cz_conventional_JIRA = "^0.2.0"
 black = {version = "^19.10b0", allow-prereleases = true}
 pretty_errors = "^1.2.17"
 termtosvg = "^1.1.0"
+pytest = "^6.0.1"
 
 [tool.commitizen]
 name = "cz_jira"

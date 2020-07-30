@@ -115,7 +115,7 @@ def main(
     version: Optional[bool] = typer.Option(
         None,
         "--version",
-        "-v",
+        "-V",
         callback=version_callback,
         help="Return current version of typer-passwd.",
         is_eager=True,
