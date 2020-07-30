@@ -9,7 +9,6 @@
 [![PyPI version](https://badge.fury.io/py/typer-passwd.svg)](https://badge.fury.io/py/typer-passwd) ![GitHub All Releases](https://img.shields.io/github/downloads/mrcartoonster/typer-passwd/total)
 
 Are you sick and tired of coming up with a password for every website you go to or being forced to reset your password every 30, 90 days??? Well you came to the right place! Just [pip install](https://realpython.com/what-is-pip/#installing-packages-with-pip), or better yet(!), [pipx](https://pipxproject.github.io/pipx/examples/#pipx-install-examples) `typer-passwd` and you'll never have to worry about coming up with certain length passwords that need a number, special character, blood, urine sample...
-![](header.png)
 
 ## Installation
 
@@ -25,6 +24,12 @@ pip install:
 
 ```bash
 $ pip install --user typer-passwd
+```
+
+pipenv install:
+
+```bash
+$ pipenv install typer-passwd
 ```
 
 
