@@ -23,6 +23,7 @@ def version_callback(value: bool) -> None:
         raise typer.Exit()
 
 
+# Move this and rstring to it's on file. Call it helpers.py
 def colorizer(random_str: Sequence[str]):
     """Returns colored output of strings.
 
