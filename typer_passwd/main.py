@@ -42,6 +42,7 @@ def colorizer(random_str: Sequence[str]):
     return "".join(color_str)
 
 
+# Make this an option that takes in a value and not a bool and it'll work!
 def rstring(num: int, no: bool = False):
     """Helper function to create a color-coded random string.
 
